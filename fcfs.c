@@ -6,10 +6,10 @@ int main(){
 	
 	printf("Enter number of processes: ");
 	scanf("%d", &n);
-	printf("\nEnter burst time: ");
+	printf("\nEnter burst time: \n");
 	for(i=0; i<n ;i++)
 	{
-		printf("p%d", i);
+		printf("p%d: ", i);
 		scanf("%d", &bt[i]);
 		p[i] = i+1;
 	}
@@ -24,16 +24,16 @@ int main(){
 			wt[i]+=bt[j];
 			total += wt[i];
 		}
-		avg_wt = (float) total/n;
-		total = 0;
 	}
 	printf("\nProcess \tBurst Time \tWaiting Time \tTurnaround Time");
+	
 	for(i=0; i<n ; i++)
 	{
 		tat[i] = bt[i] + wt[i];
 		total += tat[i];
 		printf("\nP%d \t\t %d\t\t %d\t\t %d", p[i], bt[i], wt[i], tat[i]);
 	}
+	
 	avg_tat = (float) total/n;
 	printf("\n\nAverage Waiting Time = %f\n", avg_wt);
 	printf("\nAverage Turnaround Time=%f\n", avg_tat);

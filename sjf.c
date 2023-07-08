@@ -18,7 +18,7 @@ int main()
 	for(i=0; i<n ; i++)
 	{
 		pos = i;
-		for(j=1+1; j<n; j++)
+		for(j=i+1; j<n; j++)
 		{
 			if(bt[j] < bt[pos])
 			pos = j;
